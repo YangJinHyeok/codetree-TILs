@@ -22,6 +22,7 @@ int main() {
     for(int i = 0; i < n; i++){
         if(arr[i] != arr1[i]){
             cout << "No";
+            return 0;
         }
     }
     cout << "Yes";
