@@ -35,7 +35,7 @@ int main() {
     }
 
 
-    sort(students, students + 5, cmp);
+    sort(students, students + a, cmp);
 
     for(int i = 0; i < 5; i++)
         cout << students[i].name << " " << students[i].height << " " << students[i].weight << endl;
