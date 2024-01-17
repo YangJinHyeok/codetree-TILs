@@ -5,7 +5,7 @@ int main() {
     int day = 11, hour = 11, min = 11, a, b, c;
     int elapsed_time = 0;
     cin >> a >> b >> c;
-    if(a < 11){
+    if(a < 11 || a > 14){
         cout << -1;
         return 0;
     }
