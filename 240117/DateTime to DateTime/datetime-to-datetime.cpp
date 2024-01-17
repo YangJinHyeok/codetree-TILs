@@ -5,9 +5,21 @@ int main() {
     int day = 11, hour = 11, min = 11, a, b, c;
     int elapsed_time = 0;
     cin >> a >> b >> c;
-    if(a <= 11 && b <= 11 && c < 11){
+    if(a < 11){
         cout << -1;
         return 0;
+    }
+    else if(a == 11){
+        if(b < 11){
+            cout << -1;
+            return 0;
+        }
+        else if(b == 11){
+            if(c < 11){
+                cout << -1;
+                return 0;
+            }
+        }
     }
     while(true) {
         if(day == a && hour == b && min == c)
