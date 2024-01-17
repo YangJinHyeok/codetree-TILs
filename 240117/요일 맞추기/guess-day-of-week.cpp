@@ -3,59 +3,37 @@
 using namespace std;
 
 int main() {
-    int a, b, c, d;
+    int m1, d1, m2, d2;
     int elapsed_days = 0;
     
     int num_of_days[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     string days[7] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
-    cin >> a >> b >> c >> d;
+    cin >> m1 >> d1 >> m2 >> d2;
+
     while(true) {
-        if(a == c && b == d)
+        if(m1 == m2 && d1 == d2)
             break;
 
-        if(a < c){
+        if(m1 < m2 || (m1 == m2 && d1 < d2)) { // 시작 날짜가 끝 날짜보다 이른 경우
             elapsed_days++;
-            b++;
+            d1++;
 
-            if(b > num_of_days[a]) {
-            a++;
-            b = 1;
-        }
-        }
-        else if( a > c){
+            if(d1 > num_of_days[m1]) {
+                m1++;
+                d1 = 1;
+            }
+        } else { // 시작 날짜가 끝 날짜보다 늦은 경우
             elapsed_days--;
-            b--;
+            d1--;
 
-            if(b < 1){
-                a--;
-                b = num_of_days[a];
+            if(d1 < 1) {
+                m1--;
+                d1 = num_of_days[m1];
             }
         }
-        else{
-            if(b < d){
-                elapsed_days++;
-                b++;
-
-                if(b > num_of_days[a]) {
-                    a++;
-                    b = 1;
-                }
-            }
-            else{
-                elapsed_days--;
-                b--;
-
-                if(b < 1){
-                    a--;
-                    b = num_of_days[a];
-                }
-            }
-            
-        }
-        
     }
     
-    cout << days[(elapsed_days + 7) % 7];
+    cout << days[(elapsed_days % 7 + 7) % 7]; // -6 ~ 6 범위를 0 ~ 6 범위로 변환
     
     return 0;
 }
