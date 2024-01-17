@@ -7,7 +7,7 @@ int main() {
     int elapsed_days = 0;
     
     int num_of_days[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    string days[7] = {"Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"};
+    string days[7] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
     cin >> a >> b >> c >> d;
     while(true) {
         if(a == c && b == d)
@@ -23,7 +23,7 @@ int main() {
         }
         }
         else if( a > c){
-            elapsed_days++;
+            elapsed_days--;
             b--;
 
             if(b < 1){
@@ -42,7 +42,7 @@ int main() {
                 }
             }
             else{
-                elapsed_days++;
+                elapsed_days--;
                 b--;
 
                 if(b < 1){
@@ -55,7 +55,7 @@ int main() {
         
     }
     
-    cout << days[elapsed_days % 7];
+    cout << days[(elapsed_days + 7) % 7];
     
     return 0;
 }
