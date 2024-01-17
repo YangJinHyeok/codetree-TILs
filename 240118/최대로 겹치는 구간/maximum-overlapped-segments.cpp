@@ -1,31 +1,35 @@
 #include <iostream>
+
+#define MAX_N 100
+#define MAX_R 200
+#define OFFSET 100
+
 using namespace std;
 
+int n;
+int x1[MAX_N], x2[MAX_N];
+
+int checked[MAX_R + 1];
+
 int main() {
-    int n;
     cin >> n;
-    int arr[101];
-    for(int i = 0 ; i < 101; i++){
-        arr[i] = 0;
-    }
-
-    for(int i = 0; i < n; i++){
-        int a,b;
-        cin >> a >> b;
-        for(int j = a; j <= b-1; j++){
-            arr[j]++;
-        }
-    }
-    int max = 0;
-    for(int i = 0 ; i < 101; i++){
-        if(arr[max] < arr[i]){
-            max = i;
-        }
-    }
-
-    cout << arr[max];
     
-
-
+    for(int i = 0; i < n; i++) {
+        cin >> x1[i] >> x2[i];
+        
+        x1[i] += OFFSET;
+        x2[i] += OFFSET;
+    }
+    
+    for(int i = 0; i < n; i++)
+        for(int j = x1[i]; j < x2[i]; j++)
+            checked[j]++;
+    
+    int max = 0;
+    for(int i = 0; i <= MAX_R; i++)
+        if(checked[i] > max)
+            max = checked[i];
+    
+    cout << max;
     return 0;
 }
