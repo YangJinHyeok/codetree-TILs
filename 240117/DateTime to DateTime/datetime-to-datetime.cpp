@@ -2,6 +2,8 @@
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int day = 11, hour = 11, min = 11, a, b, c;
     int elapsed_time = 0;
     cin >> a >> b >> c;
