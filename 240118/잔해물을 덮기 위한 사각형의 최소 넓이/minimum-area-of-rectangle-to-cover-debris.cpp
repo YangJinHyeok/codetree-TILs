@@ -1,50 +1,65 @@
 #include <iostream>
 using namespace std;
 
-int arr[2001][2001];
+int arr[21][21];
 
 int main() {
-    int a,b,c,d;
-    int q,w,e,r;
+    int a, b, c, d;
+    int q, w, e, r;
     cin >> a >> b >> c >> d;
-    for(int j = a; j < c; j++){
-        for(int k = b; k < d; k++){
-            arr[j+1000][k+1000] = 1;
+    for (int j = a; j < c; j++) {
+        for (int k = b; k < d; k++) {
+            arr[j + 10][k + 10] = 1;
         }
     }
 
 
     cin >> q >> w >> e >> r;
-    for(int j = q; j < e; j++){
-        for(int k = w; k < r; k++){
-            if(arr[j+1000][k+1000] == 1){
-                arr[j+1000][k+1000] = 0;
+    for (int j = q; j < e; j++) {
+        for (int k = w; k < r; k++) {
+            if (arr[j + 10][k + 10] == 1) {
+                arr[j + 10][k + 10] = 0;
             }
         }
     }
     int maxrowSum = 0;
     int maxcolSum = 0;
-    for(int i = 0; i < 2001; i++){
-        int rowSum = 0;
-        for(int j = 0; j < 2001; j++){
-            rowSum += arr[i][j];
+    int minrowindex = 21;
+    int maxrowindex = 0;
+    int mincolindex = 21;
+    int maxcolindex = 0;
+    for (int i = 0; i < 21; i++) {
+        for (int j = 0; j < 21; j++) {
+            if (arr[i][j] == 1) {
+                if (minrowindex > j) {
+                    minrowindex = j;
+                }
+                if (maxrowindex < j) {
+                    maxrowindex = j;
+                }
+            }
+            if (maxrowSum < (maxrowindex - minrowindex + 1)) {
+                maxrowSum = (maxrowindex - minrowindex + 1);
+            }
         }
-        if(rowSum > maxrowSum){
-            maxrowSum = rowSum;
-        }
-
     }
 
-    for(int i = 0; i < 2001; i++){
-        int colSum = 0;
-        for(int j = 0; j < 2001; j++){
-            colSum += arr[j][i];
+    for (int i = 0; i < 21; i++) {
+        for (int j = 0; j < 21; j++) {
+            if (arr[j][i] == 1) {
+                if (mincolindex > j) {
+                    mincolindex = j;
+                }
+                if (maxcolindex < j) {
+                    maxcolindex = j;
+                }
+            }
+            if (maxcolSum < (maxcolindex - mincolindex + 1)) {
+                maxcolSum = (maxcolindex - mincolindex + 1);
+            }
         }
-        if(colSum > maxcolSum){
-            maxcolSum = colSum;
-        }
-
     }
+
 
 
 
