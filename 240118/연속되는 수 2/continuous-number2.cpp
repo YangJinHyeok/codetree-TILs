@@ -18,12 +18,15 @@ int main() {
         if(i == 0 || v[i] == v[i - 1]){
             cnt++;
         }
+        else if(v[i] != v[i-1]){
+            cnt = 0;
+        }
         if(cnt > max_cnt){
             max_cnt = cnt;
         }
     }
 
-    cout << max_cnt;
+    cout << max_cnt + 1;
 
     return 0;
 }
