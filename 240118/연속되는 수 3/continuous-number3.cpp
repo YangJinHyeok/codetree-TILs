@@ -27,6 +27,14 @@ int main() {
         }
     }
 
+    if(pluscnt > maxplus){
+        maxplus = pluscnt;
+    }
+
+    if(minuscnt > maxminus){
+        maxminus = minuscnt;
+    }
+
     if(maxminus > maxplus){
        cout << maxminus;
     }
