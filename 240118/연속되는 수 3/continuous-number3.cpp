@@ -14,15 +14,15 @@ int main() {
         if(a > 0){
             if(minuscnt > maxminus){
                 maxminus = minuscnt;
-                minuscnt = 0;
             }
+            minuscnt = 0;
             pluscnt++;
         }
         else{
             if(pluscnt > maxplus){
                 maxplus = pluscnt;
-                pluscnt = 0;
             }
+            maxplus = pluscnt;
             minuscnt++;
         }
     }
