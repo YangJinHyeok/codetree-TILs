@@ -14,14 +14,14 @@ int main() {
     int max_cnt = 0;
     int cnt = 0;
     for(int i = 0; i < n; i++){
-        if(i == 0 || v[i] > v[i-1] && v[i] > t && v[i-1] > t){
+        if(v[i] > t){
             cnt++;
             if(cnt > max_cnt){
                 max_cnt = cnt;
             }
         }
-        else if(v[i] <= v[i-1] || v[i] < t){
-            cnt = 1;
+        else if(v[i] <= t){
+            cnt = 0;
         }
     }
 
