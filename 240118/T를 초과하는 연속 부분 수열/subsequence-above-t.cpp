@@ -20,7 +20,7 @@ int main() {
                 max_cnt = cnt;
             }
         }
-        else if(v[i] <= v[i-1]){
+        else if(v[i] <= v[i-1] || v[i] < t){
             cnt = 1;
         }
     }
