@@ -22,7 +22,7 @@ int main() {
             if(pluscnt > maxplus){
                 maxplus = pluscnt;
             }
-            maxplus = pluscnt;
+            pluscnt = 0;
             minuscnt++;
         }
     }
