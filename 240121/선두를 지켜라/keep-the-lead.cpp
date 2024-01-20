@@ -33,6 +33,13 @@ int main() {
     int b_sum = 0;
     int cnt = 0;
     bool currentA = true;
+    if(pos_a[1] > pos_b[1]){
+        currentA = true;
+    }
+    else{
+        currentA = false;
+    }
+
     for (int i = 1; i < time_a; i++) {
         a_sum += pos_a[i];
         b_sum += pos_b[i];
@@ -42,9 +49,6 @@ int main() {
         }
         else if (a_sum < b_sum && currentA) {
             currentA = false;
-            if (cnt == 0) {
-                cnt--;
-            }
             cnt++;
         }
     }
