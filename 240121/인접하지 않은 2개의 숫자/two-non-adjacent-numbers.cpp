@@ -19,12 +19,12 @@ int main() {
         int sum = 0;
         for(int j = i + 2; j < n; j++){
             sum = arr[i] + arr[j];
+            if(sum > max_sum){
+                max_sum = sum;
         }
 
-        if(sum > max_sum){
-            max_sum = sum;
         }
-
+        
     }
 
     cout << max_sum;
