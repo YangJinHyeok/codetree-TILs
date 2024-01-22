@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 
-char arr[101];
+char arr[10001];
 
 int main() {
     
@@ -15,7 +15,7 @@ int main() {
         arr[a] = b;
     }
     int max_sum = 0;
-    for(int i = 1; i <= 101 - k + 1; i++){
+    for(int i = 1; i <= 10001 - k + 1; i++){
         int sum = 0;
         for(int j = i; j <= i + k; j++){
             if(arr[j] == 'G'){
