@@ -53,8 +53,12 @@ int main() {
             }
         }
     }
-
-    cout << min_ans;
+    if(min_ans == INT_MAX){
+        cout << -1;
+    }
+    else{
+        cout << min_ans;
+    }
 
     return 0;
 }
