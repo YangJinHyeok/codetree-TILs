@@ -32,8 +32,13 @@ int main() {
             }
         }
     }
+    int ans = n - (cnt * 2);
 
-    cout << n - (cnt * 2);
+    if( n - (cnt * 2) < 0){
+        ans = 0;
+    }
+
+    cout << ans;
     
      
     
