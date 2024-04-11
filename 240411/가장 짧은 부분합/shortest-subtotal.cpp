@@ -8,10 +8,13 @@ using namespace std;
 int arr[MAX];
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int n, s;
     cin >> n >> s;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
         cin >> arr[i];
     }
 
@@ -19,7 +22,10 @@ int main() {
     int sum_val = 0;
     int j = 0;
     for (int i = 0; i < n; i++) {
-        while (j + 1 <= n && sum_val + arr[j + 1] <= s) {
+        while (j + 1 <= n) {
+            if (sum_val >= s) {
+                break;
+            }
             sum_val += arr[j + 1];
             j++;
         }
