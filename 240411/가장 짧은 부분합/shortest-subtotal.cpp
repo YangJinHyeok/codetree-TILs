@@ -34,7 +34,10 @@ int main() {
         sum_val -= arr[i];
     }
 
-
+    if (ans == INT_MAX) {
+        cout << -1;
+        return 0;
+    }
     cout << ans;
     return 0;
 }
