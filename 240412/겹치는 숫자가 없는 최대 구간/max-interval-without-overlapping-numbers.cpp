@@ -1,12 +1,19 @@
 #include <iostream>
 #include <algorithm>
 
+#define MAX_N 100000
+#define MAX_R 100000
+
 using namespace std;
 
+// 변수 선언
+int n;
+int arr[MAX_N + 1];
+int count_array[MAX_R + 1];
 int main() {
-    int arr[8] = {0, 2, 1, 2, 2, 1, 3, 1};
-    int count_array[4] = {};
-    int n = 7;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        cin >> arr[i];
 
     // 가능한 구간 중 최대 크기를 구합니다.
     int ans = 0;
