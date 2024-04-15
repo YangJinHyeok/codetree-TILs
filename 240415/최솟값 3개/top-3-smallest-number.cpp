@@ -11,7 +11,7 @@ int main() {
     cin >> n;
     for(int i = 0; i < n; i++){
         int a;
-        int sum = 1;
+        long long sum = 1;
         cin >> a;
         pq.push(-a);
         if(pq.size() < 3){
