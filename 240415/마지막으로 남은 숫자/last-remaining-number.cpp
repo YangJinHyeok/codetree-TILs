@@ -17,19 +17,24 @@ int main() {
     
     int b,c;
 
-    while(pq.size() >= 2){
+    while(pq.size() > 1){
         b = pq.top();
         pq.pop();
         c = pq.top();
         pq.pop();
         int d = abs(b-c);
-        pq.push(d);
+        if(d == 0){
+            continue;
+        }
+        else{
+            pq.push(d);
+        }
     }
     
 
     if(pq.size() == 0){
         cout << -1;
-    }
+    }   
     else{
         cout << pq.top();
     }
