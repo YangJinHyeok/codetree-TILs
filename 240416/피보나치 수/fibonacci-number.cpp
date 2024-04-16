@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-#define MAX 45
+#define MAX 46
 
-int memo[45];
+int memo[46];
 
 
 int fibo(int n){
