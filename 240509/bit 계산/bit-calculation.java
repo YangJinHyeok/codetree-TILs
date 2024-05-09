@@ -18,7 +18,7 @@ public class Main {
                     break;
                 case "delete":
                     N = Integer.parseInt(st.nextToken());
-                    bit -= 1 << N;
+                    bit ^= bit << N;
                     break;
                 case "print":
                     N = Integer.parseInt(st.nextToken());
