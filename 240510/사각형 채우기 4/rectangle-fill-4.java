@@ -1,6 +1,7 @@
+import java.util.*;
 import java.io.*;
 
-public class Main {
+public class Main2 {
 
     public static void main(String[] args) throws Exception {
         // 여기에 코드를 작성해주세요.
@@ -25,6 +26,8 @@ public class Main {
                 dp[i+1][0][0][0] += dp[i][0][0][1] % MOD;
                 //dp[0][1][0]
                 dp[i+1][1][0][1] += dp[i][0][1][0] % MOD;
+                //dp[0][1][1]
+                dp[i+1][1][0][0] += dp[i][0][1][1] % MOD;
                 //dp[1][0][0]
                 dp[i+1][0][1][1] += dp[i][1][0][0] % MOD;
                 dp[i+1][0][0][0] += dp[i][1][0][0] % MOD;
