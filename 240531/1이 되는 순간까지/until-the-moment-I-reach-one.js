@@ -15,5 +15,5 @@ function main(n){
     
 }
 
-main(Number(input));
-console.log(answer);
+let result = main(Number(input));
+console.log(result);
