@@ -8,7 +8,7 @@ for(let i = 0; i < n; i++) arr.push(t[i]);
 
 for(let i = 1; i <= n; i++){
     if(i % 2 === 1){
-        let temp = arr.slice(0 , i).sort();
+        let temp = arr.slice(0 , i).sort((a , b) => a - b);
         answer.push(temp[parseInt(temp.length / 2)]);
     }
 }
