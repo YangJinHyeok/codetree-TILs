@@ -1,4 +1,4 @@
-let fs = require("fs");
+/* let fs = require("fs");
 let input = fs.readFileSync(0).toString().split("\n");
 let n = Number(input[0]);
 
@@ -17,4 +17,18 @@ for(let i = 1; i <= n; i++){
 users.sort((a , b) => a.height - b.height);
 for(let s of users){
     console.log(`${s.name} ${s.height} ${s.weight}`)
+} */
+let fs = require("fs");
+let input = fs.readFileSync(0).toString().split("\n");
+let n = Number(input[0]);
+
+let users = [];
+for(let i = 1; i <= n; i++){
+    let [name , height , weight] = input[i].split(" ");
+    users.push([name , Number(height) , Number(weight)]);
+}
+
+users.sort((a , b) => a[1] - b[1]);
+for(let s of users){
+    console.log(s.join(" "))
 }
