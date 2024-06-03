@@ -9,6 +9,10 @@ void garo(){
     for(int i = 0; i < n; i++){
         int max_cnt = 0;
         int cnt = 1;
+        if(n == 1){
+            ans++;
+            break;
+        }
         for(int j = 0; j < n-1; j++){
             if(arr[i][j] == arr[i][j+1]){
                 cnt++;
@@ -26,6 +30,10 @@ void sero(){
     for(int i = 0; i < n; i++){
         int max_cnt = 0;
         int cnt = 1;
+        if(n == 1){
+            ans++;
+            break;
+        }
         for(int j = 0; j < n-1; j++){
             if(arr[j][i] == arr[j+1][i]){
                 cnt++;
