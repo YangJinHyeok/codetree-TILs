@@ -8,14 +8,12 @@ const arr = input[1].split(" ").map(Number);
 let ans = 0;
 let cnt = 0;
 
-let newArr = arr.filter((e) => e > t);
 
-
-for(let i = 0; i < newArr.length; i++){
-    if(i >= 1 && newArr[i] > newArr[i - 1]){
+for(let i = 0; i < n; i++){
+    if(arr[i] > t){
         cnt++;
     }
-    else cnt = 1;
+    else cnt = 0;
     ans = Math.max(ans , cnt);
 }
 console.log(ans);
