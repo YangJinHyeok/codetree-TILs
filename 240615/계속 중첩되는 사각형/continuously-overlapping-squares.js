@@ -18,7 +18,7 @@ rects.forEach((e , i) =>{
 
     for(let x = x1; x < x2; x++){
         for(let y = y1; y < y2; y++){
-            checked[x][y] = i + 1;
+            checked[x][y] = i % 2 === 0 ? 1 : 2;
         }
     }
 })
