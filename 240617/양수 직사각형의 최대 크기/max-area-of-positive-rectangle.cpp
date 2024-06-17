@@ -7,6 +7,7 @@ using namespace std;
 int n,m;
 int arr[MAX][MAX];
 int ans = INT_MIN;
+
 bool checkAbs(int x1, int y1, int x2, int y2){
     for(int i = x1; i <= x2; i++){
         for(int j = y1; j <= y2; j++){
@@ -51,8 +52,12 @@ int main() {
             }
         }
     }
-
-    cout << ans;
+    if(ans == INT_MIN){
+        cout << -1;
+    }
+    else{
+        cout << ans;
+    }
 
     return 0;
 }
