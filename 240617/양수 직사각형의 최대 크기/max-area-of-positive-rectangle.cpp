@@ -6,12 +6,12 @@ using namespace std;
 
 int n,m;
 int arr[MAX][MAX];
-int ans = INT_MIN;
+int ans = 0;
 
 bool checkAbs(int x1, int y1, int x2, int y2){
     for(int i = x1; i <= x2; i++){
         for(int j = y1; j <= y2; j++){
-            if(arr[i][j] < 0){
+            if(arr[i][j] <= 0){
                 return false;
             }
         }
@@ -52,7 +52,7 @@ int main() {
             }
         }
     }
-    if(ans == INT_MIN){
+    if(ans == 0){
         cout << -1;
     }
     else{
