@@ -4,7 +4,6 @@ let [n , m] = input[0].split(" ").map(Number);
 let arr = input.slice(1).map((e) => e.split(" ").map(Number));
 
 let range = Array.from({length : n} , ()=> new Array(n).fill(0));
-let answer = 0;
 
 let dx = [1 , 0 , -1 , 0];
 let dy = [0 , -1 , 0 , 1];
@@ -26,7 +25,7 @@ function isChecked(x , y){
 for(let i = 0; i < arr.length; i++){
     let [x , y] = arr[i];
     range[x - 1][y - 1] = 1;
-    if(isChecked(x - 1 , y - 1) >= 3){
+    if(isChecked(x - 1 , y - 1) === 3){
         console.log(1);
     }
     else{
