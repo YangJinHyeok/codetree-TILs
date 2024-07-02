@@ -9,7 +9,7 @@ let dx = [1 , 0 , -1 , 0];
 let dy = [0 , -1 , 0 , 1];
 
 function inRange(x , y){
-    return x >= 0 && x < n && y >= 0 && y < n && range[x][y] === 1;
+    return x >= 0 && x < n && y >= 0 && y < n;
 }
 
 function isChecked(x , y){
@@ -17,7 +17,7 @@ function isChecked(x , y){
     for(let i = 0; i < 4; i++){
         let nx = x + dx[i];
         let ny = y + dy[i];
-        if(inRange(nx , ny)) cnt++;
+        if(inRange(nx , ny) && range[nx][ny] === 1) cnt++;
     }
     return cnt;
 }
