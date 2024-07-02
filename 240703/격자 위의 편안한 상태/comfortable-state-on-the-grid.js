@@ -22,7 +22,7 @@ function isChecked(x , y){
     return cnt;
 }
 
-for(let i = 0; i < m; i++){
+for(let i = 0; i < arr.length; i++){
     let [x , y] = arr[i];
     range[x - 1][y - 1] = 1;
     if(isChecked(x - 1 , y - 1) === 3){
