@@ -13,7 +13,7 @@ for(let i = 0; i < arr.length; i++){
 let answer = "";
 for(let i of findNum){
     if(map.has(i)){
-        answer += map.get(i) + " ";
+        answer += `${map.get(i) } `;
     }
     else answer += "0 ";
 }
