@@ -14,7 +14,7 @@ words.forEach((word, i) => {
 });
 
 keys.forEach(key => {
-    if ('0' <= key[0] && key[0] <= '9')
+    if ('0' <= key && key <= '9')
         console.log(words[Number(key)]);
     else
         console.log(stringToNum.get(key));
