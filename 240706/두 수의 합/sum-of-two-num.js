@@ -1,20 +1,23 @@
-let fs = require("fs");
-let input = fs.readFileSync(0).toString().trim().split('\n');
+const fs = require("fs");
+const input = fs.readFileSync(0).toString().trim().split("\n");
 
-let [n , k] = input[0].split(' ').map(Number);
-let arr = input[1].split(" ").map(Number);
-let answer = 0;
+// 변수 선언 및 입력:
+const [n, k] = input[0].split(' ').map(Number);
+const arr = input[1].split(' ').map(Number);
 
-let map = new Map();
-arr.forEach((e) => {
-    map.set(e , map.has(e) ? map.get(e) + 1 : 1);
-});
+const count = new Map();
+let ans = 0;
 
-for(let [key , value] of map){
-    for(let [key2 , value2] of map){
-        if(key + key2 === k){
-            answer++;
-        }
-    }
-}
-console.log(answer / 2);
+arr.forEach(elem => {
+    const diff = k - elem;
+
+    if (count.has(diff))
+        ans += count.get(diff);
+
+    if (count.has(elem))
+        count.set(elem, count.get(elem) + 1);
+    else
+        count.set(elem, 1);
+})
+
+console.log(ans);
