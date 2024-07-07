@@ -13,10 +13,16 @@ arr.forEach((e)=>{
 let max = 0;
 let answer = [];
 for(let [key , value] of map){
-    max = Math.max(max , value);
+    answer.push([key , value]);
 }
 
-for(let [key , value] of map){
-    if(value === max) answer.push(key);
+answer.sort((a , b) =>{
+    if(a[1] === b[1]) return b[0] - a[0];
+    return b[1] - a[1];
+});
+
+let result = [];
+for(let i = 0; i < k; i++){
+    result.push(answer[i][0]);
 }
-console.log(answer.sort((a , b)=> b - a).join(" "));
+console.log(result.join(" "));
