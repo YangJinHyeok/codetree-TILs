@@ -1,6 +1,6 @@
 let fs = require("fs");
 let input = fs.readFileSync(0).toString().trim().split('\n');
-let str = input[0].split("").sort();
+let str = input[0].split("");
 let flag = false;
 let answer = "";
 
