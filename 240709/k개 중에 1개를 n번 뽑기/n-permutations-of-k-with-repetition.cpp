@@ -1,37 +1,35 @@
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
-vector<int> v;
-int k,n;
+int k, n;
+vector<int> selected_nums;
 
-void Print(){
-    for(int i = 0; i < v.size(); i++){
-        cout << v[i] << " ";
-    }
-    cout << "\n";
+
+void PrintPermutation() {
+    for(int i = 0; i < (int) selected_nums.size(); i++)
+        cout << selected_nums[i] << " ";
+    cout << endl;
 }
 
-void Choose(int num){
-    int cnt = n;
-    int temp = 1;
-    while(cnt > 0){
-        cout << num << " " << temp << "\n";
-        cnt--;
-        temp++;
+void FindPermutations(int cnt) {
+
+    if(cnt == n) {
+        PrintPermutation();
+        return;
     }
 
+    for(int i = 1; i <= k; i++) {
+        selected_nums.push_back(i);
+        FindPermutations(cnt + 1);
+        selected_nums.pop_back();
+    }
 }
-
-
 
 int main() {
-
     cin >> k >> n;
-
-    for(int i = 1; i <= k; i++){
-        Choose(i);
-    }
-
+    
+    FindPermutations(0);
     return 0;
 }
