@@ -25,9 +25,8 @@ function dfs(x , y){
         let ny = y + dy[i];
         if(inRange(nx , ny) && arr[nx][ny] === 1 && !visited[nx][ny]){
             visited[nx][ny] = true;
-            x = nx;
-            y = ny;
-            dfs(x , y);
+            dfs(nx , ny);
+            visited[nx][ny] = false;
         }
     }
 }
