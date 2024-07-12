@@ -9,6 +9,11 @@ let flag = false;
 let dx = [1 , 0];
 let dy = [0 , 1];
 
+function canGo(x , y){
+    if(!inRange(x , y)) return false;
+    if(visited[x][y] || arr[x][y] === 0) return false;
+    return true;
+}
 
 function inRange(x,  y){
     return x >= 0 && x < n && y >= 0 && y < m;
@@ -23,7 +28,7 @@ function dfs(x , y){
     for(let i = 0; i < 2; i++){
         let nx = x + dx[i];
         let ny = y + dy[i];
-        if(inRange(nx , ny) && arr[nx][ny] === 1 && !visited[nx][ny]){
+        if(canGo(nx,  ny)){
             dfs(nx , ny);
         }
     }
