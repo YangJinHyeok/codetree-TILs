@@ -3,7 +3,7 @@ let input = fs.readFileSync(0).toString().trim().split('\n');
 
 let [n , m] = input[0].split(' ').map(Number);
 let arr = input.slice(1).map((e) => e.split(' ').map(Number));
-let visited = Array.from({length: n} , () => new Array(n).fill(false));
+let visited = Array.from({length: n} , () => new Array(m).fill(false));
 let flag = false;
 
 let dx = [-1 , 0];
@@ -11,10 +11,10 @@ let dy = [0 , 1];
 
 
 function inRange(x,  y){
-    return x >= 0 && x < n && y >= 0 && y < n;
+    return x >= 0 && x < n && y >= 0 && y < m;
 }
 function dfs(x , y){
-    if(x === n - 1 && y === n - 1){
+    if(x === n - 1 && y === m - 1){
         flag = true;
         return;
     }
