@@ -32,10 +32,7 @@ function dfs(x , y){
     }
 }
 
+dfs(0 , 0)
+
 if(flag) console,log(1);
 else console.log(0);
-
-
-
-
-dfs(0 , 0)
