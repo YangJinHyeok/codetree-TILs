@@ -6,7 +6,7 @@ let arr = input.slice(1).map((e) => e.split(' ').map(Number));
 let visited = Array.from({length: n} , () => new Array(m).fill(false));
 let flag = false;
 
-let dx = [-1 , 0];
+let dx = [1 , 0];
 let dy = [0 , 1];
 
 
