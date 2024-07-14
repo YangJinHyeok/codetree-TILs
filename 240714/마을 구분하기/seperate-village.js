@@ -34,7 +34,7 @@ function dfs(x , y){
 
 for(let i = 0; i < n; i++){
     for(let j = 0; j < n; j++){
-        dfs(i , j);
+        if(!visited[i][j] && arr[i][j] === 1) dfs(i , j);
         if(cnt > 0){
             answer.push(cnt);
             cnt = 0;
