@@ -60,7 +60,7 @@ function bfs(){
 }
 
 
-for(let i = 0; i < startPoint.length; i++){
+for(let i = 0; i < m; i++){
     let [a , b] = startPoint[i];
     queue.push([a , b]);
     visited[a][b] = true;
