@@ -27,8 +27,6 @@ let arr = input.slice(1 , n + 1).map((e) => e.split(" ").map(Number));
  let visited = Array.from(Array(n), ()=>Array(n).fill(false));
 let startPoint = input.slice(n + 1).map((e) => e.split(" ").map(Number));
 let queue = new Queue();
-let answer = 1;
-
 
 let dx = [1 , -1 , 0 , 0];
 let dy = [0 , 0 , 1 , -1];
@@ -53,7 +51,6 @@ function bfs(){
             if(canGo(nx , ny)){
                 queue.push([nx , ny]);
                 visited[nx][ny] = true;
-                answer++;
             }
         }
     }
@@ -61,8 +58,8 @@ function bfs(){
 
 for(let i = 0; i < m; i++){
     let [a , b] = startPoint[i];
-    queue.push([a , b]);
-    visited[a][b] = true;
+    queue.push([a - 1 , b - 1]);
+    visited[a - 1][b - 1] = true;
 }
 
 bfs();
