@@ -25,7 +25,7 @@ let input = fs.readFileSync(0).toString().trim().split("\n");
 let [n , m] = input[0].split(" ").map(Number);
 let arr = input.slice(1 , n + 1).map((e) => e.split(" ").map(Number));
  let visited = Array.from({length : n} , ()=>new Array(m).fill(false));
-let startPoint = input.slice(n + 1 , n + 1 + m).map((e) => e.split(" ").map(Number));
+let startPoint = input.slice(n + 1).map((e) => e.split(" ").map(Number));
 let queue = new Queue();
 let answer = 1;
 
