@@ -4,8 +4,8 @@ maxNum = 0
 
 def check(i , j):
     count = 0
-    for a in range(i + n):
-        for b in range(j + n):
+    for a in range(i , i + 3):
+        for b in range(j , j + 3):
             if arr[a][b] == 1:
                 count += 1
     return count
